@@ -26,9 +26,9 @@ def stop(bot,update):
     _exit(1)
 
 # Esto es una lectura del token desde un archivo que esta en la misma carpeta del script
-token_file = open("token.txt", 'r')
-token = token_file.readline()
-token_file.close()
+with open("token.txt", 'r') as tokenFile:
+    token = tokenFile.read().splitlines()[0]
+
 # En lugar de colocar el token en un archivo aparte podemos ponerlo directamente en el código el token pero cuidado con subirlo a github o cosas asi porque es la forma de controlar nuestro bot.
 # Descomentar linea siguiente y comentar las 3 de arriba si se quiere usar así
 
